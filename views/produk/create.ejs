@@ -1,0 +1,26 @@
+<%- include(`../partials/_head`) %>
+    <div class="container">
+        <%- include(`../partials/_message`) %>
+        <div class="row">
+            <div class="col">
+                <a href="/produk" class="btn btn-sm btn-danger">Kembali</a>
+                <form action="/produk/store" method="POST">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama Produk</label>
+                        <input type="text" class="form-controll d-block" name="nama_produk" required>
+                        <label for="nama" class="form-label">Harga Produk</label>
+                        <input type="text" class="form-controll d-block mb-3" name="harga_produk" required>
+                        <select name="id_kategori">
+                            <% for( let i = 0; i < data.length; i++ ) { %>
+                                <option value="<%= data[i].id_kategori %>"><%= data[i].nama_kategori%></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-sm btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include(`../partials/_foot`) %>

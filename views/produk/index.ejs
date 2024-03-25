@@ -1,0 +1,34 @@
+<%- include(`../partials/_head`) %>
+    <div class="container">
+        <%- include(`../partials/_message`) %>
+        <div class="row">
+            <div class="col">
+                <a href="/produk/create" class="btn btn-sm btn-success">Tambah</a>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nama Produk</th>
+                        <th scope="col">Harga Produk</th>
+                        <th scope="col">Kategori</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% for( let i = 0; i < data.length; i++ ) { %>
+                          <tr>
+                            <th scope="row"><%= (i+1) %></th>
+                                <td><%= data[i].nama_produk %></td>
+                                <td><%= data[i].harga_produk %></td>
+                                <td><%= data[i].nama_kategori %></td>
+                            <td>
+                              <a href="/produk/edit/<%= data[i].id_produk %>" class="btn btn-sm btn-warning">Edit</a>
+                              <a href="/produk/delete/<%= data[i].id_produk %>" class="btn btn-sm btn-danger">delete</a>
+                            </td>
+                          </tr>
+                      <% } %>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+<%- include(`../partials/_foot`) %>

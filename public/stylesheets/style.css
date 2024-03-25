@@ -1,8 +1,8 @@
 body {
+  display: grid;
+  min-width: 1500px;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: blue;
 }
 
-a {
-  color: #00B7FF;
-}

@@ -27,7 +27,7 @@ router.post(`/store`, async function(req, res, next){
         res.redirect(`/kategori`);
     }catch{
         req.flash(`error`,`terjadi kesalahan pada fungsi`);
-        req.redirect(`/kategori`);
+        res.redirect(`/kategori`);
     }
 })
 
